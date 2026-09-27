@@ -46,3 +46,11 @@ export function readData(): SysagroData {
   try { const raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : seedData; } catch { return seedData; }
 }
 export function writeData(data: SysagroData) { localStorage.setItem(KEY, JSON.stringify(data)); }
+
+export type Lote = { id: string; nombre: string; lat: number; lng: number };
+export const lotes: Lote[] = [
+  { id: 'LT-1', nombre: 'La Esperanza 04', lat: -27.13, lng: -65.55 },
+  { id: 'LT-2', nombre: 'San Isidro 12',   lat: -27.02, lng: -65.30 },
+  { id: 'LT-3', nombre: 'El Carmen 07',    lat: -27.45, lng: -65.75 },
+  { id: 'LT-4', nombre: 'Las Tipas 02',    lat: -26.95, lng: -65.40 },
+];
